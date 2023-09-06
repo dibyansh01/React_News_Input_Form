@@ -13,20 +13,20 @@ const firebaseConfig = {
   measurementId: "G-3HTP7GDQ5V"
 };
 
-
+// Initializing Firebase once in your application
 const app = initializeApp(firebaseConfig);
 
 const SavedList = () => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-  
+    // Getting a reference to the Firestore database
     const db = getFirestore(app);
 
- 
+    // Reference to the 'list' collection
     const listCollection = collection(db, 'list');
 
-   
+    // Listening for changes to the 'list' collection
     const unsubscribe = onSnapshot(listCollection, (querySnapshot) => {
       const listData = [];
       querySnapshot.forEach((doc) => {
@@ -36,7 +36,7 @@ const SavedList = () => {
     });
 
     return () => {
-     
+      // Unsubscribing from Firestore updates when component unmounts
       unsubscribe();
     };
   }, []);

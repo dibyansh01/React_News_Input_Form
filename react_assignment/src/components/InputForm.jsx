@@ -20,7 +20,7 @@ const InputForm = () => {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
 
- 
+  // Function to validate numeric input
   const isNumeric = (value) => {
     return /^\d+$/.test(value);
   };
@@ -29,28 +29,29 @@ const InputForm = () => {
     e.preventDefault();
 
     if (!isNumeric(id)) {
+      // Displaying an error message or take appropriate action for non-numeric input
       console.error('ID must be numeric');
       return;
     }
 
-    
+    // Getting a reference to the Firestore database
     const db = getFirestore(app);
 
     try {
-      
+      // Adding a new document to a 'list' collection
       const docRef = await addDoc(collection(db, 'list'), {
-        id: parseInt(id), 
+        id: parseInt(id), // Convert ID to an integer
         name,
       });
 
-     
+      // Data successfully saved
       console.log('Document written with ID: ', docRef.id);
 
-      
+      // Clearing input fields
       setId('');
       setName('');
     } catch (error) {
-
+      // Handeling errors here
       console.error('Error adding document: ', error);
     }
   };
@@ -65,7 +66,7 @@ const InputForm = () => {
             type="text"
             value={id}
             onChange={(e) => {
-      
+              // Allowing only numeric input or empty string
               if (isNumeric(e.target.value) || e.target.value === '') {
                 setId(e.target.value);
               }
