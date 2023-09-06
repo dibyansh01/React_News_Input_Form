@@ -22,3 +22,22 @@ Before running this application, you will need the following:
    ```bash
    git clone https://github.com/dibyansh01/React_assignment
    cd react_assignment
+   ```
+2. Install the project dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure Firebase:
+   Replace the Firebase configuration in src/components/InputForm.jsx and src/components/SavedList.jsx with your Firebase project configuration. You can find your Firebase configuration in the       Firebase Console.
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+## Usage
+-  Fill out the input form with a numeric ID and a name.
+-  Click the "Submit" button to save the data to the Firebase Firestore database.
+
+## Contributing
+-  Contributions are welcome! If you find a bug or have any suggestions, please open an issue or create a pull request.
+   
+
