@@ -1,4 +1,4 @@
-// src/App.js
+
 import React from 'react';
 import InputForm from './components/InputForm';
 import SavedList from './components/SavedList';
