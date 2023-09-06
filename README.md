@@ -1,6 +1,6 @@
 # React Firebase Input Form
 
-This is a simple React application that allows users to submit data, such as Their ID and name, using a web form. The submitted data is securely stored in a Firebase Firestore database.
+This is a simple React application that allows users to submit News, such as Their ID, name and News article, using a web form. The submitted data is securely stored in a Firebase Firestore database.
 
 ## Features
 
@@ -23,21 +23,23 @@ Before running this application, you will need the following:
    git clone https://github.com/dibyansh01/React_assignment
    cd react_assignment
    ```
+
 2. Install the project dependencies:
    ```bash
    npm install
    ```
 3. Configure Firebase:
-   Replace the Firebase configuration in src/components/InputForm.jsx and src/components/SavedList.jsx with your Firebase project configuration. You can find your Firebase configuration in the       Firebase Console.
+   Replace the Firebase configuration in src/components/InputForm.jsx and src/components/SavedList.jsx with your Firebase project configuration. You can find your Firebase configuration in the Firebase Console.
 4. Start the development server locally:
    ```bash
    npm run dev
    ```
+
 ## Usage
--  Fill out the input form with a numeric ID and a name.
--  Click the "Submit" button to save the data to the Firebase Firestore database.
+
+- Fill out the input form with a numeric ID, name and news article.
+- Click the "Submit" button to save the data to the Firebase Firestore database.
 
 ## Contributing
--  Contributions are welcome! If you find a bug or have any suggestions, please open an issue or create a pull request.
-   
 
+- Contributions are welcome! If you find a bug or have any suggestions, please open an issue or create a pull request.
