@@ -1,4 +1,4 @@
-# React Firebase Input Form
+# React Firebase News Input Form
 
 This is a simple React application that allows users to submit data, such as Their ID, name and News article, using a web form. The submitted data is securely stored in a Firebase Firestore database.
 
