@@ -19,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 const InputForm = () => {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
+  const [news, setNews] = useState('')
 
   // Function to validate numeric input
   const isNumeric = (value) => {
@@ -42,6 +43,7 @@ const InputForm = () => {
       const docRef = await addDoc(collection(db, 'list'), {
         id: parseInt(id), // Convert ID to an integer
         name,
+        news
       });
 
       // Data successfully saved
@@ -50,6 +52,7 @@ const InputForm = () => {
       // Clearing input fields
       setId('');
       setName('');
+      setNews('');
     } catch (error) {
       // Handeling errors here
       console.error('Error adding document: ', error);
@@ -79,6 +82,14 @@ const InputForm = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>News:</label>
+          <input
+            type="text"
+            value={news}
+            onChange={(e) => setNews(e.target.value)}
           />
         </div>
         <button type="submit">Submit</button>
